@@ -14,8 +14,12 @@ class MainActivity : AppCompatActivity() {
         bAllSpells.setOnClickListener {
             startActivity(Intent(this, AllSpells::class.java))
 
-            //open database here first - below is an incorrect example.
-            //userDBHelper = UserDBHelper(this)
+            // NEW STUFF ADDED BY FLUFFY HERE.
+
+            //val myDatabase = ActsDbHelper(this).readableDatabase
+
+            //myDatabase.rawQuery("SELECT * FROM spells",null)
+
         }
     }
 }
