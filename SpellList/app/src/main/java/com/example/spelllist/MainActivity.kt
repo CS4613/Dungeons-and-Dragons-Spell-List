@@ -11,14 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         bAllSpells.setOnClickListener {
             startActivity(Intent(this, AllSpells::class.java))
 
             // NEW STUFF ADDED BY FLUFFY HERE.
-
-            //val myDatabase = ActsDbHelper(this).readableDatabase
-
-            //myDatabase.rawQuery("SELECT * FROM spells",null)
 
         }
     }

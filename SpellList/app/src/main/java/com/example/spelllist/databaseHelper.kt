@@ -82,8 +82,8 @@ class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
     }
 
 
-    override fun onCreate(db: SQLiteDatabase?) {
-       // db.execSQL(SQL_CREATE_ENTRIES) // Nothing to do
+    override fun onCreate(db: SQLiteDatabase) {
+       db.execSQL(SQL_CREATE_ENTRIES) // Nothing to do
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
