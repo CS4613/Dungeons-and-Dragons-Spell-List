@@ -1,6 +1,9 @@
 # Dungeons-and-Dragons-Spell-List-
 
 Application Title:
+*N/A*
+
+Temporary Title:
 Spell list for Dungeons and Dragons
 
 Developer Team:
