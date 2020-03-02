@@ -7,9 +7,9 @@ Temporary Title:
 Spell list for Dungeons and Dragons
 
 ### Developer(s):
-Daniel Woodard
-Joseph Hays
-Jeffrey Ratton
+* Daniel Woodard
+* Joseph Hays
+* Jeffrey Ratton
 
 ### Description: 
 An app to be an easy access to commonly needed infomation while playing a game of Dungeons and Dragons.
