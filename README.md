@@ -20,3 +20,10 @@ the fly. We hope that we can make it so they can also build a favorites list of 
 
 More features to come: 
 including dice roll, counter keeper, hp tracker, spell tracker, etc. 
+
+TimeLine:
+3 / 2 / 2020: Making the Github ReadMe
+
+3 / 7 / 2020: Team Meeting to discuss what is next, and who does what.
+
+3 / 14 / 2020: Compare work done between workers. Discuss next set of work to be done.
