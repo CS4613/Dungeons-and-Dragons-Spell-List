@@ -22,6 +22,7 @@ More features to come:
 including dice roll, counter keeper, hp tracker, spell tracker, etc. 
 
 TimeLine:
+
 3 / 2 / 2020: Making the Github ReadMe
 
 3 / 7 / 2020: Team Meeting to discuss what is next, and who does what.
