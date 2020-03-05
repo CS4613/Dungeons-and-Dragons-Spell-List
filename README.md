@@ -37,4 +37,5 @@ TimeLine: Very tentative due to other class work popping up out of the blue so s
 3 / 14 / 2020: Compare work done between workers. Discuss next set of work to be done.
 
 3 / 21 / 2020: Compare work done between workers. Discuss next set of work to be done.
+
 Repeating process per Saturday / Sunday
