@@ -51,14 +51,20 @@
         android:layout_width="match_parent"
         android:layout_height="10sp" />
 
+<<<<<<< HEAD
     <!-- Showing level of a Spell. Level + Name should be shown -->
+=======
+>>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Level  Spell"
         android:textSize="20sp" />
 
+<<<<<<< HEAD
     <!-- Recycler view setup  -->
+=======
+>>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/spellList"
         android:layout_width="match_parent"
