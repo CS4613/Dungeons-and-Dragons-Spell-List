@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!-- Layout of buttons in general -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Layout of Favorite button -->
         <Button
             android:id="@+id/bFavorites"
             android:layout_width="match_parent"
@@ -27,6 +28,7 @@
             android:text="Favorites"
             android:textSize="32sp"/>
 
+        <!-- Layout of All Spells button -->
         <Button
             android:id="@+id/bAllSpells"
             android:layout_width="match_parent"

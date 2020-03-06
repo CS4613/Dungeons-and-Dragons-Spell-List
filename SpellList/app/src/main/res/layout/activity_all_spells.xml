@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".AllSpells">
 
+    <!-- Title of this Screen -->
     <TextView
         android:text="Spells"
         android:textSize="20sp"
@@ -14,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- Search bar -->
     <SearchView
         android:id="@+id/searchSpells"
         android:layout_width="match_parent"
@@ -21,11 +23,13 @@
 
     </SearchView>
 
+    <!-- Layout for Filter and Clear buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- Filter Button  -->
         <Button
             android:id="@+id/bFilter"
             android:layout_width="wrap_content"
@@ -33,6 +37,7 @@
             android:layout_weight="1"
             android:text="Filter" />
 
+        <!-- Clear Button  -->
         <Button
             android:id="@+id/bClear"
             android:layout_width="wrap_content"
@@ -41,10 +46,19 @@
             android:text="clear" />
     </LinearLayout>
 
+    <!-- Formatting space for better readability -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="10sp" />
 
+    <!-- Showing level of a Spell. Level + Name should be shown -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Level  Spell"
+        android:textSize="20sp" />
+
+    <!-- Recycler view setup  -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/spellList"
         android:layout_width="match_parent"

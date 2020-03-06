@@ -6,19 +6,14 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+    //Creating the first instance of the app itself, start screen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //All spells clicked, swap to all spells activity
         bAllSpells.setOnClickListener {
             startActivity(Intent(this, AllSpells::class.java))
-
-            // NEW STUFF ADDED BY FLUFFY HERE.
-
-            //val myDatabase = ActsDbHelper(this).readableDatabase
-
-            //myDatabase.rawQuery("SELECT * FROM spells",null)
 
         }
     }

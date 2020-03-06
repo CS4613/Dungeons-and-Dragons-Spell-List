@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Total view looks -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16sp">
+    android:padding="16sp"
+    android:background="@drawable/border">
 
 
     <LinearLayout
@@ -12,12 +15,7 @@
         android:gravity="fill_vertical"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="level"
-            android:textSize="20sp" />
-
+        <!-- Text field for 1st -->
         <TextView
             android:id="@+id/level"
             android:layout_width="match_parent"
@@ -28,7 +26,7 @@
             android:textSize="32sp" />
 
     </LinearLayout>
-
+    <!-- space filler for looks -->
     <Space
         android:layout_width="20sp"
         android:layout_height="match_parent"
@@ -39,13 +37,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Spell"
-            android:textSize="20sp" />
-
+        <!-- Spell Name -->
         <TextView
             android:id="@+id/spellName"
             android:layout_width="wrap_content"
@@ -56,11 +48,13 @@
             android:textSize="18sp" />
     </LinearLayout>
 
+    <!-- For the Favorite button and info button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Favorite button -->
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -69,6 +63,7 @@
             android:text="Favorite"
             android:textSize="12sp" />
 
+        <!-- Info button -->
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
