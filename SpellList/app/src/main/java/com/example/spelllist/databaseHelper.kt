@@ -80,15 +80,9 @@ class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         return super.getReadableDatabase()
     }
 
-<<<<<<< HEAD
     //On call, make database from assets
     override fun onCreate(db: SQLiteDatabase) {
        db.execSQL(SQL_CREATE_ENTRIES)
-=======
-
-    override fun onCreate(db: SQLiteDatabase) {
-       db.execSQL(SQL_CREATE_ENTRIES) // Nothing to do
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
     }
 
     /* Given how it works, however, our database should be a non-changing database or if

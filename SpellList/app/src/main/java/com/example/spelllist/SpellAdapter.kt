@@ -8,19 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.spells.view.*
 
-<<<<<<< HEAD
 // An array of Spell (Spell.kt), passed in.
 class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adapter<SpellAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val spellName = view.spellName // from the xml view...
-=======
-class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adapter<SpellAdapter.ViewHolder>() {
-
-
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val spellName = view.spellName
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
         //val spellListx = itemView.findViewById<TextView>(R.id.spellList)
     }
 

@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_all_spells.*
 
 // Toast is great // Toast.makeText(this,test.getString(1),Toast.LENGTH_LONG).show()
 class AllSpells : AppCompatActivity() {
-<<<<<<< HEAD
     // Setting up variables for the RecyclerView use
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -23,11 +22,6 @@ class AllSpells : AppCompatActivity() {
 
     //spells is a spell list, Look to Spell.kt
     val spells = ArrayList<Spell>()
-=======
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
 
     //Setting current activity to Activity_All_Spells
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +34,7 @@ class AllSpells : AppCompatActivity() {
         //}
         val search = findViewById<SearchView>(R.id.searchSpells)
         bFilter.setOnClickListener {
-            if(recyclerView.) { // no work : (
+            if(recyclerView != null) { // no work : (
                 recyclerView.removeAllViewsInLayout(); // Removes all the views
             }
             Toast.makeText(this, "AM I DUMB", Toast.LENGTH_LONG)
@@ -54,7 +48,6 @@ class AllSpells : AppCompatActivity() {
             // Using an sql query to grab all infomation from table
             val c = myDatabase.rawQuery(query, null)
 
-<<<<<<< HEAD
             // Filling spells from database
             if(c != null){
                 if(c.moveToFirst()){
@@ -78,21 +71,14 @@ class AllSpells : AppCompatActivity() {
             }
             viewAdapter = SpellAdapter(spells)
         }
-=======
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
 
 
         //Creating a DatabaseHelper.kt object, ActsDbHelper to read
         val myDatabase = ActsDbHelper(this).readableDatabase
-<<<<<<< HEAD
         // Using an sql query to grab all infomation from table
         val c = myDatabase.rawQuery(query, null)
 
         // Filling spells from database
-=======
-        val c = myDatabase.rawQuery("Select * from spells", null)
-        val spells = ArrayList<Spell>()
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
         if(c != null){
             if(c.moveToFirst()){
                 do{
@@ -113,20 +99,12 @@ class AllSpells : AppCompatActivity() {
         else{
             System.out.println("Empty")
         }
-<<<<<<< HEAD
         // Close the file, or in this case database when done
         myDatabase.close()
 
         //pulled from internet. It works. Sometimes it be like that.
         viewManager = LinearLayoutManager(this)
         viewAdapter = SpellAdapter(spells) // sending spells to SpellAdapter.kt for view
-=======
-        myDatabase.close()
-        System.out.println(spells[1].type)
-        //val cursorDrive: SQLiteCursorDriver
-        viewManager = LinearLayoutManager(this)
-        viewAdapter = SpellAdapter(spells)
->>>>>>> 421931593032b67a5b80d2d8463f12cf5d7de987
         recyclerView = findViewById<RecyclerView>(R.id.spellList).apply{
             layoutManager = viewManager
             adapter = viewAdapter
