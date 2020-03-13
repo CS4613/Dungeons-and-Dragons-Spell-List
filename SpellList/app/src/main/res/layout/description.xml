@@ -8,79 +8,86 @@
 
     <TextView
         android:id="@+id/spellName"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Spell Name"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/keyWords"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Keywords"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spellName" />
 
     <TextView
         android:id="@+id/levelType"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Level Type"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/keyWords" />
 
     <TextView
         android:id="@+id/components"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Components"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/levelType" />
 
 
     <TextView
         android:id="@+id/castingTime"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Casting Time"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/components" />
 
     <TextView
         android:id="@+id/range"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Range"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/castingTime" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="157dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:gravity="fill_horizontal"
         android:text="Description"
         android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/range" />
 

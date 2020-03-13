@@ -24,7 +24,7 @@ class AllSpells : AppCompatActivity() {
     private var blankquery = "SELECT * FROM spells"
     private var prevFilter = ""
     //spells is a spell list, Look to Spell.kt
-    val spells = ArrayList<Spell>()
+    var spells = ArrayList<Spell>()
 
     //called when the recycler view contents is being updated or initialized
     private fun setLayout(){
@@ -46,6 +46,10 @@ class AllSpells : AppCompatActivity() {
         if(c != null){
             if(c.moveToFirst()){
                 do{
+                    var level = c.getString(4).first().toString()
+                    if (!level.first().isDigit()){
+                        level = "0"
+                    }
                     val name = c.getString(1)
                     val page = c.getString(2)
                     val keywords = c.getString(3)
@@ -55,7 +59,7 @@ class AllSpells : AppCompatActivity() {
                     val components = c.getString(7)
                     val duration = c.getString(8)
                     val description = c.getString(9)
-                    spells.add(Spell(name, page, keywords, type, castTime,
+                    spells.add(Spell(level, name, page, keywords, type, castTime,
                         range, components, duration, description))
                 }while(c.moveToNext())
             }
@@ -63,6 +67,7 @@ class AllSpells : AppCompatActivity() {
         else{
             System.out.println("Empty")
         }
+        spells = ArrayList(spells.sortedWith(compareBy { it.level }))
     }
 
     /*Setting current activity to Activity_All_Spells

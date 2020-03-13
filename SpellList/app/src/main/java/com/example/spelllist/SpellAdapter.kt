@@ -13,6 +13,7 @@ class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adap
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val spellName = view.spellName // from the xml view...
+        val spellLevel = view.level
         //val spellListx = itemView.findViewById<TextView>(R.id.spellList)
     }
 
@@ -28,6 +29,7 @@ class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adap
     // holder, from viewHolder = current position name
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.spellName.text = spellList[position].name
+        holder.spellLevel.text = spellList[position].level
         //holder?.txtTitle?.text = spellList[position].type
     }
 
