@@ -20,60 +20,24 @@ class AllSpells : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
+    //Basic sql query to select everything from main database
+    private var blankquery = "SELECT * FROM spells"
+    private var prevFilter = ""
     //spells is a spell list, Look to Spell.kt
     val spells = ArrayList<Spell>()
 
-    //Setting current activity to Activity_All_Spells
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_all_spells)
-        var query = "SELECT * FROM spells"
-        // On click open info, using description screen.
-        //bAllSpells.setOnClickListener {
-        //    startActivity(Intent(this, AllSpells::class.java))
-        //}
-        val search = findViewById<SearchView>(R.id.searchSpells)
-        bFilter.setOnClickListener {
-            if(recyclerView != null) { // no work : (
-                recyclerView.removeAllViewsInLayout(); // Removes all the views
-            }
-            Toast.makeText(this, "AM I DUMB", Toast.LENGTH_LONG)
-            val queryItem = search.query
-            if(queryItem.isNotBlank()){
-                query += " WHERE name LIKE '%${queryItem}%'"
-            }
-            Log.d("We IN here", query)
-            //viewAdapter = SpellAdapter(spells)
-            val myDatabase = ActsDbHelper(this).readableDatabase
-            // Using an sql query to grab all infomation from table
-            val c = myDatabase.rawQuery(query, null)
-
-            // Filling spells from database
-            if(c != null){
-                if(c.moveToFirst()){
-                    do{
-                        val name = c.getString(1)
-                        val page = c.getString(2)
-                        val keywords = c.getString(3)
-                        val type = c.getString(4)
-                        val castTime = c.getString(5)
-                        val range = c.getString(6)
-                        val components = c.getString(7)
-                        val duration = c.getString(8)
-                        val description = c.getString(9)
-                        spells.add(Spell(name, page, keywords, type, castTime,
-                            range, components, duration, description))
-                    }while(c.moveToNext())
-                }
-            }
-            else{
-                System.out.println("Empty")
-            }
-            viewAdapter = SpellAdapter(spells)
+    //called when the recycler view contents is being updated or initialized
+    private fun setLayout(){
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = SpellAdapter(spells)
+        recyclerView = findViewById<RecyclerView>(R.id.spellList).apply{
+            layoutManager = viewManager
+            adapter = viewAdapter
         }
+    }
 
-
-        //Creating a DatabaseHelper.kt object, ActsDbHelper to read
+    //Fill spells from the database from the sql query "query"
+    private fun fillSpells(query : String){
         val myDatabase = ActsDbHelper(this).readableDatabase
         // Using an sql query to grab all infomation from table
         val c = myDatabase.rawQuery(query, null)
@@ -92,34 +56,47 @@ class AllSpells : AppCompatActivity() {
                     val duration = c.getString(8)
                     val description = c.getString(9)
                     spells.add(Spell(name, page, keywords, type, castTime,
-                                range, components, duration, description))
+                        range, components, duration, description))
                 }while(c.moveToNext())
             }
         }
         else{
             System.out.println("Empty")
         }
-        // Close the file, or in this case database when done
-        myDatabase.close()
+    }
 
-        //pulled from internet. It works. Sometimes it be like that.
-        viewManager = LinearLayoutManager(this)
-        viewAdapter = SpellAdapter(spells) // sending spells to SpellAdapter.kt for view
-        recyclerView = findViewById<RecyclerView>(R.id.spellList).apply{
-            layoutManager = viewManager
-            adapter = viewAdapter
+    /*Setting current activity to Activity_All_Spells
+    Note: Sql does not care about case, so case is ignored by
+    dropping everything to lowercase in the search to not refresh
+    unnecessarily
+     */
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_all_spells)
+        var query = blankquery
+
+        val search = findViewById<SearchView>(R.id.searchSpells)
+        bFilter.setOnClickListener {
+            val queryItem = search.query
+            //Don't repeat work if there is no change
+            if(prevFilter != queryItem.toString().toLowerCase()) {
+                if (queryItem.isNotBlank()) {
+                    query += " WHERE name LIKE '%${queryItem}%'"
+                } else {
+                    query = blankquery
+                }
+                prevFilter = queryItem.toString().toLowerCase()
+                spells.clear()
+                Log.d("We IN here", query)
+                fillSpells(query)
+                query = blankquery
+                viewAdapter = SpellAdapter(spells)
+                setLayout()
+            }
         }
 
-        //RecyclerView recycle = (RecyclerView) findViewByID(R.id.spellList)
-        /*spellList.apply {
-            layoutManager = LinearLayoutManager(this@AllSpells)
-            adapter = SpellAdapter(spells)
-        }*/
-
-        /*val test = myDatabase.rawQuery("SELECT * FROM spells",null)
-        test.moveToFirst()
-        // 1 is column is based for column number.
-        Toast.makeText(this,test.getString(1),Toast.LENGTH_LONG).show()*/
+        fillSpells(query)
+        setLayout()
     }
 
 }
