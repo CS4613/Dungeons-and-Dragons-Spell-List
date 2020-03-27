@@ -19,6 +19,11 @@ We hope that a user could search by name, components, and other such search term
 the fly. We hope that we can make it so they can also build a favorites list of spells. Inside of a favorites list a user could most likely host every spell that their current champion uses to keep it close at hand. This description as is, is the baseline of the app
 and can most likely be considered our finished product.
 
+### Simple Description:
+An app that holds the majority of the spells to be found in D&D. A finished product can be seen as a spell list along with a
+description of each spell. Along with the spell list there should be an ability to store selected spells into smaller lists.
+Another base wanted feature would be a search feature. This is the base of the app and can be seen as a useable application.
+
 Visuals: Is a goal but isn't high on the list at the moment.
 With colors, text size, and other such changes in the back of our minds.
 
