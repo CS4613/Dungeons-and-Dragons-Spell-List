@@ -11,6 +11,7 @@ Locaiton: (After opening the project in Android Studio)
 App/java/com.example.spelllist/
 
 Should contain 6 files
+
 AllSpells, databaseHelper.kt, Description, MainActivity, Spell, SpellAdapter
 
 app/assets/databases/
