@@ -6,6 +6,18 @@ Application Title:
 Temporary Title:
 Spell list for Dungeons and Dragons
 
+Locaiton: (After opening the project in Android Studio)
+
+App/java/com.example.spelllist/
+Should contain 6 files, AllSpells, databaseHelper.kt, Description, MainActivity, Spell, SpellAdapter
+
+app/assets/databases/
+Should contain the database we are currently using for the project
+spellData.sqlite3
+
+app/res/layout/
+should contain 5 xml files, Acitivity_all_spells.xml, activity_main.xml, description.xml, so forth.
+
 ### Developer(s):
 * Daniel Woodard
 * Joseph Hays
