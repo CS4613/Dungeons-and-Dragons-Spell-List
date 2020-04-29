@@ -50,6 +50,7 @@ class AllSpells : AppCompatActivity() {
                     if (!level.first().isDigit()){
                         level = "0"
                     }
+                    val id = c.getInt(0)
                     val name = c.getString(1)
                     val page = c.getString(2)
                     val keywords = c.getString(3)
@@ -59,8 +60,9 @@ class AllSpells : AppCompatActivity() {
                     val components = c.getString(7)
                     val duration = c.getString(8)
                     val description = c.getString(9)
-                    spells.add(Spell(level, name, page, keywords, type, castTime,
-                        range, components, duration, description))
+                    val favorite = c.getInt(10)
+                    spells.add(Spell(id, level, name, page, keywords, type, castTime,
+                        range, components, duration, description, favorite))
                 }while(c.moveToNext())
             }
         }
