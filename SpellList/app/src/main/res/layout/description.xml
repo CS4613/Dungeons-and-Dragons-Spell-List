@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background2">
 
 
     <ScrollView
@@ -33,7 +34,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Spell Name"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/keyWords"
@@ -42,7 +47,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Keywords"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/levelType"
@@ -51,7 +60,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Level Type"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/components"
@@ -60,7 +73,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Components"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/castingTime"
@@ -69,7 +86,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Casting Time"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/range"
@@ -78,7 +99,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Range"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
 
             <TextView
                 android:id="@+id/description"
@@ -87,7 +112,11 @@
                 android:layout_gravity="top"
                 android:gravity="fill_horizontal"
                 android:text="Description"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
+                android:textColor="#f8f8ff"
+                android:textStyle="normal|bold|italic"/>
         </LinearLayout>
     </ScrollView>
 

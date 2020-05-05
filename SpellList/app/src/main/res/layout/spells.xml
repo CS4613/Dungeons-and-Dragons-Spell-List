@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16sp"
-    android:background="@drawable/border">
+    android:background="@drawable/border"
+    >
 
 
     <LinearLayout
@@ -18,6 +19,10 @@
         <!-- Text field for 1st -->
         <TextView
             android:id="@+id/level"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="fill_vertical"
@@ -45,6 +50,10 @@
             android:layout_gravity="bottom"
             android:gravity="fill_vertical"
             android:text="Spell Name"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -57,18 +66,30 @@
         <!-- Favorite button -->
         <Button
             android:id="@+id/favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_gravity="right"
             android:text="Favorite"
+            android:background="@drawable/background3"
+            android:bufferType="normal"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
             android:textSize="12sp" />
 
         <!-- Info button -->
         <Button
             android:id="@+id/info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/background3"
             android:layout_gravity="right"
+            android:bufferType="normal"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
             android:text="info"
             android:textSize="12sp" />
     </LinearLayout>

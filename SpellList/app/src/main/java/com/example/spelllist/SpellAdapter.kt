@@ -18,6 +18,7 @@ class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adap
         val spellName = view.spellName // from the xml view...
         val spellLevel = view.level
         val spellInfo = view.info
+        val spellFav = view.favorite
         //val spellListx = itemView.findViewById<TextView>(R.id.spellList)
     }
 
@@ -46,6 +47,30 @@ class SpellAdapter(private val spellList : ArrayList<Spell>) : RecyclerView.Adap
             intent.putExtra("desc",spellList[position].description)
 
             context.startActivity(intent)
+        }
+        if (spellList[position].favorite == 1){
+            holder.spellFav.text = "Unfavorite"
+        }
+        else{
+            holder.spellFav.text = "Favorite"
+        }
+        holder.spellFav.setOnClickListener {
+            val myDb = ActsDbHelper(holder.itemView.context).readableDatabase
+            val c = myDb.rawQuery("select favorite from spells where id = "+spellList[position].id, null)
+            c.moveToFirst()
+            var fav = 0
+            if (c != null){
+                fav = c.getInt(0)
+            }
+            val myDatabase = ActsDbHelper(holder.itemView.context).writableDatabase
+            if (fav == 1){
+                holder.spellFav.text = "Favorite"
+                myDatabase.execSQL("update spells set favorite = 0 where id = "+spellList[position].id)
+            } else{
+                holder.spellFav.text = "Unfavorite"
+                myDatabase.execSQL("update spells set favorite = 1 where id = "+spellList[position].id)
+            }
+            c.close()
         }
         //holder?.txtTitle?.text = spellList[position].type
     }

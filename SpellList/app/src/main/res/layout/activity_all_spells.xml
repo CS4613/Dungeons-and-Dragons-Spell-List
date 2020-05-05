@@ -5,13 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AllSpells">
+    tools:context=".AllSpells"
+    android:background="@drawable/background2">
 
     <!-- Title of this Screen -->
     <TextView
         android:text="Spells"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
+        android:textColor="#f8f8ff"
+        android:textStyle="normal|bold|italic"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -30,20 +34,34 @@
         android:orientation="horizontal">
 
         <!-- Filter Button  -->
-        <Button
-            android:id="@+id/bFilter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Filter" />
 
         <!-- Clear Button  -->
         <Button
-            android:id="@+id/bClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/bFilter"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:background="@drawable/background3"
+            android:bufferType="normal"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
+            android:text="Filter" />
+
+        <Button
+            android:id="@+id/bClear"
+            android:layout_width="76dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/background3"
+            android:bufferType="normal"
+            android:shadowColor="#000000"
+            android:shadowRadius="20"
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
             android:text="clear" />
+
     </LinearLayout>
 
     <!-- Formatting space for better readability -->
@@ -56,6 +74,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Level  Spell"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
+        android:textColor="#f8f8ff"
+        android:textStyle="normal|bold|italic"
         android:textSize="20sp" />
 
     <!-- Recycler view setup  -->

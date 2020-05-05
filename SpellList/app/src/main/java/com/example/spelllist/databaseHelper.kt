@@ -16,10 +16,6 @@ import android.content.res.Resources
 import java.io.BufferedReader
 import java.lang.Exception
 
-
-// DONT PASS DATA FROM ACTIVITY TO ACTIVITY - USE GLOBALS.
-// going to make a object of DBSpells that will be global.
-
 class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     // Check version
@@ -71,7 +67,7 @@ class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
 
     // Premade database, overwrite the base function and make it not changeable.
     override fun getWritableDatabase(): SQLiteDatabase {
-        throw RuntimeException("The $DATABASE_NAME database is not writable.")
+        return super.getWritableDatabase()
     }
 
     // Override the base fun, Check if database needs updated, return a readable DB view
@@ -109,6 +105,7 @@ class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
             const val COLUMN_NAME_COMPONENTS = "Components"
             const val COLUMN_NAME_DURATION = "Duration"
             const val COLUMN_NAME_DESCRIPTION = "Description"
+            const val COLUMN_NAME_FAVORITE = "Favorite"
         }
     }
     // The data being feed into the table.
@@ -123,7 +120,8 @@ class ActsDbHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NA
                 "${FeedEntry.COLUMN_NAME_RANGE} TEXT," +
                 "${FeedEntry.COLUMN_NAME_COMPONENTS} TEXT," +
                 "${FeedEntry.COLUMN_NAME_DURATION} TEXT," +
-                "${FeedEntry.COLUMN_NAME_DESCRIPTION} TEXT)"
+                "${FeedEntry.COLUMN_NAME_DESCRIPTION} TEXT," +
+                "${FeedEntry.COLUMN_NAME_FAVORITE} INTEGER)"
 
     // If table exists already, drop it so as to not repeat data.
    // private var SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS ${FeedEntry.TABLE_NAME}"

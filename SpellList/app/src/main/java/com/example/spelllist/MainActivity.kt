@@ -13,7 +13,13 @@ class MainActivity : AppCompatActivity() {
 
         //All spells clicked, swap to all spells activity
         bAllSpells.setOnClickListener {
+            println("\n\ntest\n\n")
             startActivity(Intent(this, AllSpells::class.java))
+
+        }
+        bFavorites.setOnClickListener {
+            println("\n\ntest\n\n")
+            startActivity(Intent(this, Favorites::class.java))
 
         }
     }

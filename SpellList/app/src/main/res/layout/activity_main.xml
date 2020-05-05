@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background2"
     tools:context=".MainActivity">
 
     <!-- Layout of buttons in general -->
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,16 +26,29 @@
         <Button
             android:id="@+id/bFavorites"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="77dp"
+            android:background="@drawable/background3"
+            android:bufferType="normal"
+            android:shadowColor="#000000"
+            android:shadowRadius="10"
             android:text="Favorites"
-            android:textSize="32sp"/>
+            android:textColor="#f8f8ff"
+            android:textSize="32sp"
+            android:textStyle="normal|bold|italic"
+            android:visibility="visible" />
+
 
         <!-- Layout of All Spells button -->
         <Button
             android:id="@+id/bAllSpells"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="82dp"
+            android:background="@drawable/background3"
             android:text="All spells"
-            android:textSize="32sp"/>
+            android:textColor="#f8f8ff"
+            android:textStyle="normal|bold|italic"
+            android:shadowColor="#000000"
+            android:shadowRadius="10"
+            android:textSize="32sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
